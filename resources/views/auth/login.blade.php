@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <h3>MANJA.in</h3>
+            <h1>MANJA.in</h1>
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
@@ -46,3 +46,4 @@
         </form>
     </x-jet-authentication-card>
 </x-guest-layout>
+
