@@ -23,6 +23,15 @@
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+
+        <form action="{{ route('login') }}">
+            <input type="submit" value="Masuk sebagai pemilik perusahaan">
+        </form>
+            <p>sdasda</p>
+        <form action="{{ route('list') }}">
+            <input type="submit" value="Masuk sebagai pengunjung">
+        </form>
+
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
@@ -36,5 +45,6 @@
                     @endauth
                 </div>
             @endif
+            
     </body>
 </html>
