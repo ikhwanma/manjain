@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Bulan Mei 2021 pada 07.01
+-- Waktu pembuatan: 19 Bulan Mei 2021 pada 09.47
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 7.4.15
 
@@ -111,7 +111,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('XiobIOTQJsCMfi9PLUpdjydqsHOY6tm0cc2jkJHH', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiRk1KdVNJeWgwQzF2NW9zUFgzNEp2cElDZ0lhSlRrRms5U2g1dzZnbyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXNoYm9hcmQiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTAkRXhFcXJnTHZiNmo5UzhqSTRhR3B3Lk1ja2NIbGViRTViUHRYeXJFaTA3dEh6Y0IuOWJnYy4iO3M6MjE6InBhc3N3b3JkX2hhc2hfc2FuY3R1bSI7czo2MDoiJDJ5JDEwJEV4RXFyZ0x2YjZqOVM4akk0YUdwdy5NY2tjSGxlYkU1YlB0WHlyRWkwN3RIemNCLjliZ2MuIjt9', 1621400440);
+('7Kj1kb0Z7u7mNRUqRC1ST8L5FnBd9Lkm7qtHfQbE', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiQnkxZVE5YVhiM1FNOGxWOGdxV3NOM2c4UW03czFiVEVxU1RZeWhqMSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXNoYm9hcmQiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToyO3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTAkOHF6Ny5aa3lzNURFSm54SWNQZnNrZTRBcWFENHlST0JyY1JObzQ3L2tHanc4Tjh1RFRGUDYiO3M6MjE6InBhc3N3b3JkX2hhc2hfc2FuY3R1bSI7czo2MDoiJDJ5JDEwJDhxejcuWmt5czVERUpueEljUGZza2U0QXFhRDR5Uk9CcmNSTm80Ny9rR2p3OE44dURURlA2Ijt9', 1621410409);
 
 -- --------------------------------------------------------
 
@@ -137,7 +137,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Ikhwan Maulana Akbar', 'Ikhwan749@gmail.com', NULL, '$2y$10$ExEqrgLvb6j9S8jI4aGpw.MckcHlebE5bPtXyrEi07tHzcB.9bgc.', NULL, NULL, NULL, '2021-05-18 22:00:38', '2021-05-18 22:00:38');
+(1, 'Ikhwan Maulana Akbar', 'Ikhwan749@gmail.com', NULL, '$2y$10$ExEqrgLvb6j9S8jI4aGpw.MckcHlebE5bPtXyrEi07tHzcB.9bgc.', NULL, NULL, 'wyRaBNo7EDhaX8BaBX3jJA1UTMeTrdM3LAva1HOq7xzKyysqYVpgVg8peZue', '2021-05-18 22:00:38', '2021-05-18 22:00:38'),
+(2, 'tes', 'tes@gmail.com', NULL, '$2y$10$8qz7.Zkys5DEJnxIcPfske4AqaD4yROBrcRNo47/kGjw8N8uDTFP6', NULL, NULL, NULL, '2021-05-19 00:46:49', '2021-05-19 00:46:49');
 
 --
 -- Indexes for dumped tables
@@ -211,7 +212,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
