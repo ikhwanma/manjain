@@ -13,4 +13,7 @@ class ButtonController extends Controller
     public function showBuatLowongan(){
         return view('buatLowongan');
     }
+    public function showBuatPerusahaan(){
+        return view('buatPerusahaan');
+    }
 }
