@@ -22,3 +22,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/list', [\App\Http\Controllers\ButtonController::class, 'showList']) ->name('list');
+
+Route::get('/buatLowongan', [\App\Http\Controllers\ButtonController::class, 'showBuatLowongan']) ->name('buatLowongan');
