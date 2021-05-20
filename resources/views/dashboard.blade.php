@@ -3,7 +3,6 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
         </h2>
-
     </x-slot>
 
     <div class="py-12">
@@ -13,10 +12,4 @@
             </div>
         </div>
     </div>
-    <form action="{{ url('/buatLowongan') }}">
-<input type="submit" name="button" class="inputp" value="Buat Lowongan">
-</form>
-<form action="{{ url('/makePerusahaan') }}">
-<input type="submit" name="button" class="inputp" value="Buat Perusahaan">
-</form>
 </x-app-layout>
