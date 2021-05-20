@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <h3>MANJA.in</h3>
+                        <img src="img/logo.png" alt="" width="100px" height="100px" margin-left="0px">
                     </a>
                 </div>
 
@@ -14,6 +14,21 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('buatPerusahaan') }}" :active="request()->routeIs('buatPerusahaan')">
+                        {{ __('Buat Perusahaan') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('buatLowongan') }}" :active="request()->routeIs('buatLowongan')">
+                        {{ __('Buat Lowongan') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('editLowongan') }}" :active="request()->routeIs('editLowongan')">
+                        {{ __('Edit Lowongan') }}
                     </x-jet-nav-link>
                 </div>
             </div>
@@ -142,6 +157,7 @@
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
         </div>
+
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">

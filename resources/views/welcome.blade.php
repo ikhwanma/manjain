@@ -23,7 +23,7 @@
                 font-size: 25px;
                 border-radius: 10px;
                 border: 3px black;
-
+                margin-top: -10px;
             }
             .inputp{
                 font-family: 'Nunito', sans-serif;
@@ -38,16 +38,17 @@
                 text-align: center;
             }
             #logo{
-                font-family: 'Nunito', sans-serif;
-                font-size: 40px;
-                text-align: center;
-                margin-top: 100px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 0px;
+                width: 20%;
             }
         </style>
         <!--TES halooooooooo-->
     </head>
     <body>
-        <p id="logo">MANJA.in</p>
+        <img src="img/logo.png" alt="" id="logo">
         @if (Route::has('login'))
             @auth
             <form action="{{ url('/dashboard') }}">

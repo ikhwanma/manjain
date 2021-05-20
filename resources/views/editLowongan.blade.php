@@ -1,3 +1,9 @@
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Edit Lowongan') }}
+        </h2>
+    </x-slot>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,3 +16,4 @@
     <h2>Manage Lowongan</h2>
 </body>
 </html>
+</x-app-layout>
