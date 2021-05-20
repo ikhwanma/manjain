@@ -25,4 +25,6 @@ Route::get('/list', [\App\Http\Controllers\ButtonController::class, 'showList'])
 
 Route::get('/buatLowongan', [\App\Http\Controllers\ButtonController::class, 'showBuatLowongan']) ->name('buatLowongan');
 
+Route::get('/buatPerusahaan', [\App\Http\Controllers\ButtonController::class, 'showBuatPerusahaan']) ->name('buatPerusahaan');
+
 Route::get('/editLowongan', [\App\Http\Controllers\ButtonController::class, 'showEditLowongan']) ->name('editLowongan');

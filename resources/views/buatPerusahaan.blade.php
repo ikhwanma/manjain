@@ -62,15 +62,15 @@
 
 <body>
 
-<h1>Buat Lowongan</h1>
+<h1>Buat Perusahaan</h1>
 <form action="{{ url('/dashboard') }}">
-Judul Lowongan : &nbsp <input type="text" name="judul"  ><br>
-Kategori Pekerjaan: <input type="text" name="kategori"><br>
-Lokasi : <input type="text" name="lokasi"><br>
-Gaji: <input type="text" name="gaji"><br>
-Tipe Jadwal Kerja: <input type="text" name="tipe"><br>
-Deskripsi: <input type="text" name="deskripsi"><br>
-Cara Melamar: <input type="text" name="cara"><br>
+Nama Perusahaan :  <input type="text" name="nama"  ><br>
+Industri : <input type="text" name="industri"><br>
+Alamat Kantor Utama : <input type="text" name="utama"><br>
+Lokasi Kantor Cabang : <input type="text" name="cabang"><br>
+Situs Resmi : <input type="text" name="situs"><br>
+Logo Perusahaan : <input type="text" name="deskripsi"><br>
+Deskripsi Perusahaan : <input type="text" name="cara"><br>
 
 <input type="submit" name="button" class="inputp" value="Submit">
 </form>
