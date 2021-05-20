@@ -16,4 +16,7 @@
     <form action="{{ url('/buatLowongan') }}">
 <input type="submit" name="button" class="inputp" value="Buat Lowongan">
 </form>
+<form action="{{ url('/makePerusahaan') }}">
+<input type="submit" name="button" class="inputp" value="Buat Perusahaan">
+</form>
 </x-app-layout>
