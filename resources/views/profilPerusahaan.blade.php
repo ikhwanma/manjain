@@ -63,12 +63,12 @@
 <body>
 
 <form action="{{ url('/dashboard') }}">
-Posisi Dicari : <input type="text" name="posisi"><br>
-Nama Perusahaan <br> Pemilik Perusahaan <input type="text" name="nama perusahaan"><br>
-Deskripsi : <input type="text" name="deskripsi"><br>
-Gaji : <input type="text" name="gaji"><br>
-Kategori : <input type="text" name="kategori"><br>
-Cara Melamar : <input type="text" name="cara melamar"><br>
+Nama Perusahaan: <input type="text" name="nama perusahaan"><br>
+Logo <input type="file" name="logo"><br>
+Industri : <input type="text" name="industri"><br>
+Alamat Kantor Utama : <input type="text" name="alamat kantor utama"><br>
+Situs Resmi : <input type="text" name="situs resmi"><br>
+Deskripsi Perusahaan : <input type="text" name="deskripsi perusahaan"><br>
 
 <input type="submit" name="button" class="inputp" value="Submit">
 </form>

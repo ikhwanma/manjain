@@ -69,7 +69,7 @@ Industri : <input type="text" name="industri"><br>
 Alamat Kantor Utama : <input type="text" name="utama"><br>
 Lokasi Kantor Cabang : <input type="text" name="cabang"><br>
 Situs Resmi : <input type="text" name="situs"><br>
-Logo Perusahaan : <input type="text" name="deskripsi"><br>
+Logo Perusahaan : <input type="file" name="upload gambar"><br>
 Deskripsi Perusahaan : <input type="text" name="cara"><br>
 
 <input type="submit" name="button" class="inputp" value="Submit">

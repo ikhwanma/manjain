@@ -22,4 +22,7 @@ class ButtonController extends Controller
     public function showHalamanLowongan(){
         return view('halamanLowongan');
     }
+    public function showProfilPerusahaan(){
+        return view('profilPerusahaan');
+    }
 }

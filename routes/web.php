@@ -30,3 +30,5 @@ Route::get('/buatPerusahaan', [\App\Http\Controllers\ButtonController::class, 's
 Route::get('/editLowongan', [\App\Http\Controllers\ButtonController::class, 'showEditLowongan']) ->name('editLowongan');
 
 Route::get('/halamanLowongan', [\App\Http\Controllers\ButtonController::class, 'showHalamanLowongan']) ->name('halamanLowongan');
+
+Route::get('/profilPerusahaan', [\App\Http\Controllers\ButtonController::class, 'showProfilPerusahaan']) ->name('profilPerusahaan');
