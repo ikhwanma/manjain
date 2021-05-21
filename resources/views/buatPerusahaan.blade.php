@@ -11,74 +11,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
 <!-- Styles -->
-
-
-<style>
-    h1 {
-        font-family: 'Nunito', sans-serif;
-        text-align : center;
-    }
-    body {
-        font-family: 'Nunito', sans-serif;
-        background-color : #f3f4f6;
-    }
-    .inputpp{
-        font-family: 'Nunito', sans-serif;
-        background-color: #a0aec0;
-        padding: 17px 20px;
-        font-size: 25px;
-        border-radius: 10px;
-        border: 3px black;
-
-    }
-    .inputp{
-        font-family: 'Nunito', sans-serif;
-        background-color: #919af9;
-        height : 55px;
-        width : 100px;
-        font-size: 20px;
-        border-radius  : 10px;
-        border: 3px black;
-        margin-top: 20px;
-        text-align : center;
-        align : center ;
-    }
-    form {
-        font-family: 'Nunito', sans-serif;
-        display: grid;
-        padding: 1em;
-        background: #f9f9f9;
-        border: 1px solid #c1c1c1;
-        margin: 2rem auto 0 auto;
-        max-width: 600px;
-        padding: 1em;
-    }
-    form input {
-        background: #fff;
-        border: 2px solid #9c9c9c;
-    }
-    #logo{
-        font-family: 'Nunito', sans-serif;
-        font-size: 40px;
-        text-align: center;
-        margin-top: 100px;
-    }
-</style>
+<link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
-<h1>Buat Perusahaan</h1>
-<form action="{{ url('/dashboard') }}">
-Nama Perusahaan :  <input type="text" name="nama"  ><br>
-Industri : <input type="text" name="industri"><br>
-Alamat Kantor Utama : <input type="text" name="utama"><br>
-Lokasi Kantor Cabang : <input type="text" name="cabang"><br>
-Situs Resmi : <input type="text" name="situs"><br>
-Logo Perusahaan : <input type="file" name="upload gambar"><br>
-Deskripsi Perusahaan : <input type="text" name="cara"><br>
-
-<input type="submit" name="button" class="inputp" value="Submit">
+<form action="addPerusahaan" method="post">
+    @csrf
+    Nama Perusahaan :  <input type="text" name="nama" placeholder="Masukkan Nama" value="{{old('nama')}}">
+    <span style="color: red;">@error('nama'){{$message}} @enderror</span><br>
+    Industri : <input type="text" name="industri" placeholder="Masukkan Industri" value="{{old('industri')}}">
+    <span style="color: red;">@error('industri'){{$message}} @enderror</span><br>
+    Alamat Kantor : <input type="text" name="alamat" placeholder="Masukkan Alamat Kantor" value="{{old('alamat')}}">
+    <span style="color: red;">@error('alamat'){{$message}} @enderror</span><br>
+    Situs Resmi : <input type="text" name="situs" placeholder="Masukkan Situs Resmi" value="{{old('situs')}}"> 
+    <span style="color: red;">@error('situs'){{$message}} @enderror</span><br>
+    Logo Perusahaan : <input type="file" name="logo" ><br>
+    Deskripsi Perusahaan : <textarea name="deskripsi"  cols="30" rows="6" placeholder="Masukkan Deskripsi Perusahaan" value="{{old('deskrpsi')}}"></textarea>
+    <span style="color: red;">@error('deskripsi'){{$message}} @enderror</span><br>
+    
+    <button type="submit" class="inputp">Submit</button>
 </form>
 
 </body>

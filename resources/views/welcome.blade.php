@@ -11,7 +11,6 @@
 
         <!-- Styles -->
         
-
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
@@ -23,7 +22,7 @@
                 font-size: 25px;
                 border-radius: 10px;
                 border: 3px black;
-                margin-top: -10px;
+                margin-top: 10px;
             }
             .inputp{
                 font-family: 'Nunito', sans-serif;
@@ -42,7 +41,9 @@
                 margin-left: auto;
                 margin-right: auto;
                 margin-bottom: 0px;
-                width: 20%;
+                margin-top: 200px;
+                width: 15%;
+                height: 15%;
             }
         </style>
         <!--TES halooooooooo-->

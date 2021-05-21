@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <h1>MANJA.in</h1>
+            <img src="img/logo.png" alt="" width="200px" height="200px" margin-left="0px">
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />

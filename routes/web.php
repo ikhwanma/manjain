@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,14 +22,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('/list', [\App\Http\Controllers\ButtonController::class, 'showList']) ->name('list');
+Route::get('/list', [App\Http\Controllers\ButtonController::class, 'showList'])->name('list');
+Route::get('/buatLowongan', [App\Http\Controllers\ButtonController::class, 'showBuatLowongan'])->name('buatLowongan');
+Route::get('/editLowongan', [App\Http\Controllers\ButtonController::class, 'showEditLowongan'])->name('editLowongan');
+Route::get('/halamanLowongan', [App\Http\Controllers\ButtonController::class, 'showHalamanLowongan'])->name('halamanLowongan');
+Route::get('/profilPerusahaan', [App\Http\Controllers\ButtonController::class, 'showProfilPerusahaan'])->name('profilPerusahaan');
 
-Route::get('/buatLowongan', [\App\Http\Controllers\ButtonController::class, 'showBuatLowongan']) ->name('buatLowongan');
-
-Route::get('/buatPerusahaan', [\App\Http\Controllers\ButtonController::class, 'showBuatPerusahaan']) ->name('buatPerusahaan');
-
-Route::get('/editLowongan', [\App\Http\Controllers\ButtonController::class, 'showEditLowongan']) ->name('editLowongan');
-
-Route::get('/halamanLowongan', [\App\Http\Controllers\ButtonController::class, 'showHalamanLowongan']) ->name('halamanLowongan');
-
-Route::get('/profilPerusahaan', [\App\Http\Controllers\ButtonController::class, 'showProfilPerusahaan']) ->name('profilPerusahaan');
+Route::get('/buatPerusahaan', [App\Http\Controllers\PerusahaanController::class, 'index'])->name('buatPerusahaan');
+Route::post('/addPerusahaan', [App\Http\Controllers\PerusahaanController::class, 'addPerusahaan'])->name('addPerusahaan');
