@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Bulan Mei 2021 pada 06.42
+-- Waktu pembuatan: 21 Bulan Mei 2021 pada 10.48
 -- Versi server: 10.4.17-MariaDB
--- Versi PHP: 7.4.15
+-- Versi PHP: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -94,10 +94,10 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `perusahaan`
+-- Struktur dari tabel `perusahaans`
 --
 
-CREATE TABLE `perusahaan` (
+CREATE TABLE `perusahaans` (
   `id` int(11) NOT NULL,
   `perusahaan` text NOT NULL,
   `pemilik` text NOT NULL,
@@ -108,10 +108,10 @@ CREATE TABLE `perusahaan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `perusahaan`
+-- Dumping data untuk tabel `perusahaans`
 --
 
-INSERT INTO `perusahaan` (`id`, `perusahaan`, `pemilik`, `industri`, `alamat`, `situs`, `deskripsi`) VALUES
+INSERT INTO `perusahaans` (`id`, `perusahaan`, `pemilik`, `industri`, `alamat`, `situs`, `deskripsi`) VALUES
 (3, 'MANJA.in', 'Ikhwan Maulana Akbar', 'IT', 'Kota Malang', 'www.manjain.com', 'MANJA.in(Mencari Lowongan Kerja)');
 
 -- --------------------------------------------------------
@@ -134,7 +134,11 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('rwTRLicaak6QTzJ1dHDfqZT5pkYPaj3afX1neHaF', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoic0plSEd5S3BnY25NanBMdFZoY0M4ZVd5a0pEcU9ncXJyTG1ZalNnRyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXNoYm9hcmQiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTAkRXhFcXJnTHZiNmo5UzhqSTRhR3B3Lk1ja2NIbGViRTViUHRYeXJFaTA3dEh6Y0IuOWJnYy4iO3M6MjE6InBhc3N3b3JkX2hhc2hfc2FuY3R1bSI7czo2MDoiJDJ5JDEwJEV4RXFyZ0x2YjZqOVM4akk0YUdwdy5NY2tjSGxlYkU1YlB0WHlyRWkwN3RIemNCLjliZ2MuIjt9', 1621572098);
+('8vnxCjCktT0tW10b3ZsTzVo4bbfNiTH1XynRYKjM', 3, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiVklTS25oWTJLY0tlUWpsYjYzWVptQ3ZQaUxhNW9Xb2x6WXk3TkFSdyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXNoYm9hcmQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTozO3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTAkYW5YVWFLVkxiWGh3VzBYQVRUa3ZwLklBLjA1LmRwSHZTMFQwRzdGV1BGV3hWanFyVVhKNEsiO30=', 1621586838),
+('JU8uPYqAwThVGokGuDXPxo733lQZo12mY8yUPO4L', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiektkNEdCUzNjUUdnTVVKZngxQUw2QUgwYzc4S0Q0ckZTMHl3bk9sdiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NjU6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9maWxQZXJ1c2FoYWFuP2J1dHRvbj1Qcm9maWwlMjBQZXJ1c2FoYWFuIjt9fQ==', 1621586796),
+('NLzgAwN60BoOxRhpnvTpbWsf0bGmc5r8R8q5D1ET', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiQ3Jyc0JEVndqWDNnYjE4c0JDM3E0dU55VkFPRmxJYnVWMUVzNzZrRCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9yZWdpc3RlciI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1621586703),
+('TILflv9JnvXdEXK6YmYpa9EHuSdfghvbvW7jRty6', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoid2hZNThkZ3cwS2t2U2ZrT1ZWQlpvN3h1bjQyNlZqS251TGtBc3Y4RSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXNoYm9hcmQiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTAkRXhFcXJnTHZiNmo5UzhqSTRhR3B3Lk1ja2NIbGViRTViUHRYeXJFaTA3dEh6Y0IuOWJnYy4iO30=', 1621580426),
+('tjO1ouOkTvug4rWqvaSNaEQZcBu1AM96cjKQZMvW', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSHFPQ09GTlNTczE4aXRtV1NXWDNaUkRGTjhaaHR5bERGT3lhbWpQUSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9yZWdpc3RlciI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1621586703);
 
 -- --------------------------------------------------------
 
@@ -160,8 +164,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Ikhwan Maulana Akbar', 'Ikhwan749@gmail.com', NULL, '$2y$10$ExEqrgLvb6j9S8jI4aGpw.MckcHlebE5bPtXyrEi07tHzcB.9bgc.', NULL, NULL, '9fR35l8fuKcHhkSqkcCjESo4FhjnPQ1XENfZJ95y2uBRK5oLXrLcdo3x8UXX', '2021-05-18 22:00:38', '2021-05-18 22:00:38'),
-(2, 'tes', 'tes@gmail.com', NULL, '$2y$10$8qz7.Zkys5DEJnxIcPfske4AqaD4yROBrcRNo47/kGjw8N8uDTFP6', NULL, NULL, NULL, '2021-05-19 00:46:49', '2021-05-19 00:46:49');
+(1, 'Ikhwan Maulana Akbar', 'Ikhwan749@gmail.com', NULL, '$2y$10$ExEqrgLvb6j9S8jI4aGpw.MckcHlebE5bPtXyrEi07tHzcB.9bgc.', NULL, NULL, 'CtEvCCE3ab16jgagEokF9He4vZFOyHgifEXmGq24SJhH7dlqFvncApLDQC5c', '2021-05-18 22:00:38', '2021-05-18 22:00:38'),
+(2, 'tes', 'tes@gmail.com', NULL, '$2y$10$8qz7.Zkys5DEJnxIcPfske4AqaD4yROBrcRNo47/kGjw8N8uDTFP6', NULL, NULL, NULL, '2021-05-19 00:46:49', '2021-05-19 00:46:49'),
+(3, 'Tria Elvafizani', 'triaelva@gmail.com', NULL, '$2y$10$anXUaKVLbXhwW0XATTkvp.IA.05.dpHvS0T0G7FWPFWxVjqrUXJ4K', NULL, NULL, NULL, '2021-05-21 01:45:45', '2021-05-21 01:45:45');
 
 --
 -- Indexes for dumped tables
@@ -195,9 +200,9 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Indeks untuk tabel `perusahaan`
+-- Indeks untuk tabel `perusahaans`
 --
-ALTER TABLE `perusahaan`
+ALTER TABLE `perusahaans`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -238,16 +243,16 @@ ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `perusahaan`
+-- AUTO_INCREMENT untuk tabel `perusahaans`
 --
-ALTER TABLE `perusahaan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `perusahaans`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
