@@ -4,19 +4,38 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
+   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+@foreach($data as $item)
+    <div class="listPerusahaan" style="margin-left: 400px;" style="border: 200px black;">
+        <img src="img/logo.png" alt="" id="logoPerusahaan">
+        <table>
+        <tr>
+            <td>Nama Perusahaan</td>
+            <td>: {{$item['perusahaan']}}</td>
+        </tr>
+        <tr>
+            <td>Nama Pemilik</td>
+            <td>: {{$item['pemilik']}}</td>
+        </tr>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-jet-welcome />
-            </div>
-        </div>
+        </table>
+        
     </div>
-
-    <form action="{{ url('/halamanLowongan') }}">
-        <input type="submit" name="button" class="inputp" value="Halaman Lowongan">
-    </form>
-    <form action="{{ url('/profilPerusahaan') }}">
-        <input type="submit" name="button" class="inputp" value="Profil Perusahaan">
-    </form>
-</x-app-layout>
+        
+    @endforeach
+</body>
+</html>
+    
+    
+    
+    </x-app-layout>

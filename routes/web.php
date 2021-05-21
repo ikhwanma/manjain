@@ -28,5 +28,6 @@ Route::get('/editLowongan', [App\Http\Controllers\ButtonController::class, 'show
 Route::get('/halamanLowongan', [App\Http\Controllers\ButtonController::class, 'showHalamanLowongan'])->name('halamanLowongan');
 Route::get('/profilPerusahaan', [App\Http\Controllers\ButtonController::class, 'showProfilPerusahaan'])->name('profilPerusahaan');
 
-Route::get('/buatPerusahaan', [App\Http\Controllers\PerusahaanController::class, 'index'])->name('buatPerusahaan');
+Route::get('/buatPerusahaan', [App\Http\Controllers\ButtonController::class, 'showBuatPerusahaan'])->name('buatPerusahaan');
 Route::post('/addPerusahaan', [App\Http\Controllers\PerusahaanController::class, 'addPerusahaan'])->name('addPerusahaan');
+Route::get('/dashboard', [App\Http\Controllers\PerusahaanController::class, 'index'])->name('dashboard');

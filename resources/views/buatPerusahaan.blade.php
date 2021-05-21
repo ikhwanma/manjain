@@ -15,7 +15,11 @@
 </head>
 
 <body>
-
+@if(Session::get('success'))
+    <div class="alertSuccess">
+        {{Session::get('success')}}
+    </div>
+@endif
 <form action="addPerusahaan" method="post">
     @csrf
     Nama Perusahaan :  <input type="text" name="nama" placeholder="Masukkan Nama" value="{{old('nama')}}">

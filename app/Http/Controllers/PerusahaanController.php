@@ -6,11 +6,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Models\Perusahaan;
 
 class PerusahaanController extends Controller
 {
     function index(){
-        return view('buatPerusahaan');
+        $data = Perusahaan::where('pemilik', Auth::user()->name)->get();
+        return view('dashboard',['data'=>$data]);
     }
 
     function addPerusahaan(Request $request){
@@ -25,7 +27,7 @@ class PerusahaanController extends Controller
             'deskripsi'=>'required'
         ]);
         
-        $query = DB::table('perusahaan')->insert([
+        $query = DB::table('perusahaans')->insert([
             'perusahaan'=>$request->input('nama'),
             'pemilik'=>$pemilik,
             'industri'=>$request->input('industri'),
@@ -35,18 +37,11 @@ class PerusahaanController extends Controller
         ]);
 
         if($query){
-            return view('Dashboard')->with('success','Perusahaan ditambahkan');
+            return back()->with('success','Perusahaan ditambahkan');
         }else{
             return back()->with('fail','Something went wrong');
         }
         
     }
 
-    function showData(){
-        $data = array(
-            'list'=>DB::table('crud')->get()
-        );
-
-        return view('Dashboard', $data);
-    }
 }
