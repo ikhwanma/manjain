@@ -7,14 +7,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body> 
-    <form action="{{ url('/halamanLowongan') }}">
-        <input type="submit" name="button" class="inputp" value="Halaman Lowongan">
+<body>
+    <h1>{{$perusahaan['perusahaan']}}</h1>
+    <h2>Pemilik: {{$perusahaan['pemilik']}}</h2>
+    <h3>{{$perusahaan['deskripsi']}}</h3>
+    <form action="{{'buatLowongan'}}" class="card-button">
+        <input class="card-button-text" type="submit" value="Buat Lowongan">
     </form>
-    <form action="{{ url('/profilPerusahaan') }}">
-        <input type="submit" name="button" class="inputp" value="Profil Perusahaan">
-    </form>
-
-    
 </body>
 </html>

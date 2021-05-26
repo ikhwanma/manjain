@@ -5,10 +5,11 @@ body {
 }
 .inputp{
   font-family: 'Nunito', sans-serif;
-  background-color: #919af9;
+  background-color: #d8e0fd;
   padding: 17px 20px;
   font-size: 25px;
   border-radius: 10px;
+  color: #3363ff;
   border: 3px black;
 }
 
@@ -33,15 +34,71 @@ form input {
   margin-top: 100px;
 }
 
-.listPerusahaan{
-  display: grid;
+.grid{
+  margin-top: 1rem;
+  margin-left: 70px;
   font-family: 'Nunito', sans-serif;
-  font-size: 18px;
-  width: 350px;
-  height: 350px;
-  margin-left: 200;
-  border-radius: 10px;
-  border: 10px black;
+  display: grid;
+  width: 10em;
+  grid-gap: 6rem;
+  grid-template-columns: repeat(3, 350px);
+  align-items: start;
+  position: absolute;
+}
+
+.grid-item{
+  background-color: #fff;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.grid-item:hover{
+  transform: translateY(-0.5%);
+  box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
+}
+
+.card-img{
+  display: block;
+  width: 10rem;
+  height: 10rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-content{
+  padding: 3rem;
+}
+
+.card-title{
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.7;
+  color: #3d3d3d;
+  margin-bottom: 2.5rem;
+}
+
+.card-button{
+  margin-top: 5px;
+  display: block;
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+  background-color: #d8e0fd;
+  text-decoration: none;
+  border: none;
+  border-radius: 0.4rem;
+  transition: 0.2s;
+  letter-spacing: 0.1rem;
+}
+
+.card-button-text{
+  background-color: #d8e0fd;
+  color: #3363ff;
+  border: none;
 }
 
 .alertSuccess{
@@ -55,3 +112,22 @@ form input {
   text-align: center;
   margin: 2rem auto 0 auto;
 }
+
+  @media only screen and (max-width: 1920px){
+    .grid{
+      margin-left: 170px;
+      grid-template-columns: repeat(3, 350px);
+    }
+  }
+  @media only screen and (max-width: 1600px){
+    .grid{
+      margin-left: 75px;
+      grid-template-columns: repeat(3, 350px);
+    }
+  }
+  @media only screen and (max-width: 1024px){
+    .grid{
+      margin-left: 50px;
+      grid-template-columns: repeat(2, 350px);
+    }
+  }

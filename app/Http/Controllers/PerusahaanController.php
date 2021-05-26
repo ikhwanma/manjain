@@ -15,6 +15,10 @@ class PerusahaanController extends Controller
         return view('dashboard',['data'=>$data]);
     }
 
+    function show(Perusahaan $perusahaan){
+        return view('perusahaan', ['perusahaan'=>$perusahaan]);
+    }
+
     function addPerusahaan(Request $request){
 
         $pemilik = Auth::user()->name;

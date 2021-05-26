@@ -5,7 +5,8 @@
         </h2>
     </x-slot>
    
-<!DOCTYPE html>
+    <div class="grid">
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,27 +16,30 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-@foreach($data as $item)
-    <div class="listPerusahaan" style="margin-left: 400px;" style="border: 200px black;">
-        <img src="img/logo.png" alt="" id="logoPerusahaan">
-        <table>
-        <tr>
-            <td>Nama Perusahaan</td>
-            <td>: {{$item['perusahaan']}}</td>
-        </tr>
-        <tr>
-            <td>Nama Pemilik</td>
-            <td>: {{$item['pemilik']}}</td>
-        </tr>
 
-        </table>
-        
+<div class="grid">
+    @foreach($data as $item)
+    
+    <div class="grid-item">
+        <div class="card">
+            <img class="card-img" src="img/logo.png" alt="" >
+            <div class="card-content">
+                <h1 class="card-title">{{$item['perusahaan']}}</h1>
+                <form action="{{Route('perusahaan', $item['id']) }}" class="card-button">
+                    <input class="card-button-text" type="submit" value="Lihat Perusahaan">
+                </form>
+                <form action="{{'editPerusahaan'}}" class="card-button">
+                    <input class="card-button-text" type="submit" value="Edit Perusahaan">
+                </form>
+            </div>
+        </div>
     </div>
-        
     @endforeach
+
+    
+</div>
+
 </body>
 </html>
-    
-    
     
     </x-app-layout>
