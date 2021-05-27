@@ -19,6 +19,10 @@ class PerusahaanController extends Controller
         return view('perusahaan', ['perusahaan'=>$perusahaan]);
     }
 
+    function showBuatLowongan(Perusahaan $perusahaan2,$id){
+        return view('buatLowongan', ['perusahaan'=>$id]);
+    }
+
     function addPerusahaan(Request $request){
 
         $pemilik = Auth::user()->name;

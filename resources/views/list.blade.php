@@ -8,13 +8,7 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body> 
-    <form action="{{ url('/halamanLowongan') }}">
-        <input type="submit" name="button" class="inputp" value="Halaman Lowongan">
-    </form>
-    <form action="{{ url('/profilPerusahaan') }}">
-        <input type="submit" name="button" class="inputp" value="Profil Perusahaan">
-    </form>
-
+    
     
 </body>
 </html>

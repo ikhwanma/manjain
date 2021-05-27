@@ -2,16 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Lowongan;
+use App\Models\Perusahaan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class LowonganController extends Controller
 {
     function index(){
-        return view('buatLowongan');
+        $data = 'tes';
+        return view('list', ['data'=>$data]);
     }
 
     function addLowongan(Request $request){
+        
         $request->validate([
             'judul'=>'required',
             'kategori'=>'required',
@@ -23,6 +27,7 @@ class LowonganController extends Controller
 
         $query = DB::table('lowongan')->insert([
             'judul'=>$request->input('judul'),
+            'idperusahaan'=>$request->input('idperusahaan'),
             'kategori'=>$request->input('kategori'),
             'gaji'=>$request->input('gaji'),
             'jadwal'=>$request->input('jadwal'),
@@ -31,7 +36,7 @@ class LowonganController extends Controller
         ]);
 
         if($query){
-            return back()->with('success','Perusahaan ditambahkan');
+            return back()->with('success','Lowongan ditambahkan');
         }else{
             return back()->with('fail','Something went wrong');
         }

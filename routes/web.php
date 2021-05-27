@@ -33,4 +33,6 @@ Route::post('/addPerusahaan', [App\Http\Controllers\PerusahaanController::class,
 Route::get('/{perusahaan}', [App\Http\Controllers\PerusahaanController::class, 'show'])->name('perusahaan');
 Route::get('/dashboard', [App\Http\Controllers\PerusahaanController::class, 'index'])->name('dashboard');
 
-Route::post('/addLowongan', [App\Http\Controllers\LowonganController::class, 'addLowongan'])->name('addLowongan');
+Route::post('addLowongan', [App\Http\Controllers\LowonganController::class, 'addLowongan'])->name('addLowongan');
+Route::get('/buatLowongan/{perusahaan}', [App\Http\Controllers\PerusahaanController::class, 'showBuatLowongan'])->name('buatLowonganPerusahaan');
+Route::post('/list', [App\Http\Controllers\LowonganController::class, 'index'])->name('list');

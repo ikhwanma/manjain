@@ -1,3 +1,9 @@
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Buat Lowongan') }}
+        </h2>
+    </x-slot>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,10 +20,11 @@
         {{Session::get('success')}}
     </div>
 @endif
- 
 <h1 style="text-align: center;">Buat Lowongan</h1>
-<form action="addLowongan" method="post">
+<form action="{{Route('addLowongan') }}" method="post">
     @csrf
+    Id(Tidak dapat diubah) :  <input type="text" name="idperusahaan" value="{{$perusahaan}}" readonly>
+    <span style="color: red;">@error('judul'){{$message}} @enderror</span><br>
     Judul Lowongan :  <input type="text" name="judul" placeholder="Masukkan Judul" value="{{old('judul')}}">
     <span style="color: red;">@error('judul'){{$message}} @enderror</span><br>
     Kategori Pekerjaan : <input type="text" name="kategori" placeholder="Masukkan Kategori" value="{{old('kategori')}}">
@@ -35,3 +42,4 @@
  
 </body>
 </html>
+</x-app-layout>

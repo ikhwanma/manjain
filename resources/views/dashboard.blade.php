@@ -25,7 +25,7 @@
             <img class="card-img" src="img/logo.png" alt="" >
             <div class="card-content">
                 <h1 class="card-title">{{$item['perusahaan']}}</h1>
-                <form action="{{Route('perusahaan', $item['id']) }}" class="card-button">
+                <form action="{{Route('perusahaan', $item) }}" class="card-button">
                     <input class="card-button-text" type="submit" value="Lihat Perusahaan">
                 </form>
                 <form action="{{'editPerusahaan'}}" class="card-button">
