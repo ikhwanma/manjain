@@ -32,3 +32,5 @@ Route::get('/buatPerusahaan', [App\Http\Controllers\ButtonController::class, 'sh
 Route::post('/addPerusahaan', [App\Http\Controllers\PerusahaanController::class, 'addPerusahaan'])->name('addPerusahaan');
 Route::get('/{perusahaan}', [App\Http\Controllers\PerusahaanController::class, 'show'])->name('perusahaan');
 Route::get('/dashboard', [App\Http\Controllers\PerusahaanController::class, 'index'])->name('dashboard');
+
+Route::post('/addLowongan', [App\Http\Controllers\LowonganController::class, 'addLowongan'])->name('addLowongan');
