@@ -10,8 +10,10 @@ use Illuminate\Support\Facades\DB;
 class LowonganController extends Controller
 {
     function index(){
-        $data = 'tes';
-        return view('list', ['data'=>$data]);
+        $data = array(
+            'list'=>DB::table('lowongan')->get()
+        );
+        return view('list', $data);
     }
 
     function addLowongan(Request $request){

@@ -22,7 +22,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('/list', [App\Http\Controllers\ButtonController::class, 'showList'])->name('list');
+Route::get('/list', [App\Http\Controllers\LowonganController::class, 'index'])->name('list');
 Route::get('/buatLowongan', [App\Http\Controllers\ButtonController::class, 'showBuatLowongan'])->name('buatLowongan');
 Route::get('/editLowongan', [App\Http\Controllers\ButtonController::class, 'showEditLowongan'])->name('editLowongan');
 Route::get('/halamanLowongan', [App\Http\Controllers\ButtonController::class, 'showHalamanLowongan'])->name('halamanLowongan');
@@ -35,4 +35,3 @@ Route::get('/dashboard', [App\Http\Controllers\PerusahaanController::class, 'ind
 
 Route::post('addLowongan', [App\Http\Controllers\LowonganController::class, 'addLowongan'])->name('addLowongan');
 Route::get('/buatLowongan/{perusahaan}', [App\Http\Controllers\PerusahaanController::class, 'showBuatLowongan'])->name('buatLowonganPerusahaan');
-Route::post('/list', [App\Http\Controllers\LowonganController::class, 'index'])->name('list');
