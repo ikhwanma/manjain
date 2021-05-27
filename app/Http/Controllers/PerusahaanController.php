@@ -16,10 +16,19 @@ class PerusahaanController extends Controller
         return view('dashboard',['data'=>$data]);
     }
 
+    function lihatPerusahaan(){
+       
+        return view('lihatPerusahaan');
+    }
+
     function show(Perusahaan $perusahaan){
-        $datapemilik = Lowongan::where('id', $perusahaan)->first();
-        die($datapemilik);
-        return view('perusahaan', ['perusahaan'=>$perusahaan]);
+        $datapemilik = Lowongan::where('idperusahaan', $perusahaan->id)->get();
+        if($datapemilik!="[]"){
+            return view('perusahaan', ['perusahaan'=>$datapemilik]);
+        }else{
+            return view('perusahaanKosong',['perusahaan'=>$perusahaan]);
+        }
+        
     }
 
     function showPerusahaanData(){
@@ -32,8 +41,11 @@ class PerusahaanController extends Controller
     }
 
     function addPerusahaan(Request $request){
-
         $pemilik = Auth::user()->name;
+
+        $imgName = $request->logo->getClientOriginalName();
+        $request->logo->move(public_path('img'),$imgName);
+
 
         $request->validate([
             'nama'=>'required',
@@ -49,17 +61,18 @@ class PerusahaanController extends Controller
             'industri'=>$request->input('industri'),
             'alamat'=>$request->input('alamat'),
             'situs'=>$request->input('situs'),
-            'deskripsi'=>$request->input('deskripsi')
-
-
+            'deskripsi'=>$request->input('deskripsi'),
+            'logo'=>$imgName
         ]);
 
         if($query){
             return back()->with('success','Perusahaan ditambahkan');
         }else{
-            return back()->with('fail','Something went wrong');
+            return back()->with('tes');
         }
         
     }
+
+    
 
 }

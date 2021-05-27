@@ -2,11 +2,15 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Ticket cards</title>
+  <title>MANJA.in</title>
   <link rel="stylesheet" href="../css/styleCard.css">
+  <style>
 
+
+  </style>
 </head>
 <body>
+  
 <div class="wrapper">
     <nav>
       <input type="checkbox" id="show-search">
@@ -15,6 +19,7 @@
       <div class="content">
       <div class="logo"><a href=" "><img src="../img/logo.png" alt=""></a></div>
         <ul class="links">
+          <li ><a href="{{route('tentang')}}">Tentang</a></li>
           <li ><a href="login">Login</a></li>
           <li ><a href="register">Register</a></li>
         </ul>
@@ -28,7 +33,7 @@
 
  
 @foreach($list as $item)
-<li class="booking-card" style="background-image: url(../img/logo.png)">
+<li class="booking-card" style="background-image: url(../img/{{$item->logo}})">
     <div class="book-container">
       <div class="content">
         <p>{{$item->perusahaan}}</p>

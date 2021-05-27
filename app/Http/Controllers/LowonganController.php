@@ -11,7 +11,7 @@ class LowonganController extends Controller
 {
     function index(){
         $data = array(
-            'list'=>DB::table('lowongan')->get()
+            'list'=>DB::table('lowongans')->get()
         );
         return view('list', $data);
     }
@@ -27,7 +27,7 @@ class LowonganController extends Controller
             'cara'=>'required'
         ]);
 
-        $query = DB::table('lowongan')->insert([
+        $query = DB::table('lowongans')->insert([
             'judul'=>$request->input('judul'),
             'idperusahaan'=>$request->input('idperusahaan'),
             'kategori'=>$request->input('kategori'),
@@ -40,7 +40,8 @@ class LowonganController extends Controller
             'industri'=>$datapemilik->industri,
             'alamat'=>$datapemilik->alamat,
             'situs'=>$datapemilik->situs,
-            'deskripsiP'=>$datapemilik->deskripsi
+            'deskripsiP'=>$datapemilik->deskripsi,
+            'logo'=>$datapemilik->logo
         ]);
 
         if($query){

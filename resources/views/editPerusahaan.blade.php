@@ -19,20 +19,20 @@
     <div class="alertSuccess">
         {{Session::get('success')}}
     </div>
-    
 @endif
-<form action="addPerusahaan" method="post" enctype="multipart/form-data">
+<form action="{{route('updatePerusahaan')}}" method="post" >
     @csrf
-    Nama Perusahaan :  <input type="text" name="nama" placeholder="Masukkan Nama" value="{{old('nama')}}">
+    <input type="hidden" name="id" value="{{$Info->id}}">
+    Nama Perusahaan :  <input type="text" name="nama" placeholder="Masukkan Nama" value="{{$Info->perusahaan}}">
     <span style="color: red;">@error('nama'){{$message}} @enderror</span><br>
-    Industri : <input type="text" name="industri" placeholder="Masukkan Industri" value="{{old('industri')}}">
+    Industri : <input type="text" name="industri" placeholder="Masukkan Industri" value="{{$Info->industri}}">
     <span style="color: red;">@error('industri'){{$message}} @enderror</span><br>
-    Alamat Kantor : <input type="text" name="alamat" placeholder="Masukkan Alamat Kantor" value="{{old('alamat')}}">
+    Alamat Kantor : <input type="text" name="alamat" placeholder="Masukkan Alamat Kantor" value="{{$Info->alamat}}">
     <span style="color: red;">@error('alamat'){{$message}} @enderror</span><br>
-    Situs Resmi : <input type="text" name="situs" placeholder="Masukkan Situs Resmi" value="{{old('situs')}}"> 
+    Situs Resmi : <input type="text" name="situs" placeholder="Masukkan Situs Resmi" value="{{$Info->situs}}"> 
     <span style="color: red;">@error('situs'){{$message}} @enderror</span><br>
     Logo Perusahaan : <input type="file" name="logo" ><br>
-    Deskripsi Perusahaan : <textarea name="deskripsi"  cols="30" rows="6" placeholder="Masukkan Deskripsi Perusahaan" value="{{old('deskrpsi')}}"></textarea>
+    Deskripsi Perusahaan : <input type="text" name="deskripsi"  cols="30" rows="6" placeholder="Masukkan Deskripsi Perusahaan" value="{{$Info->perusahaan}}"></input>
     <span style="color: red;">@error('deskripsi'){{$message}} @enderror</span><br>
     
     <button type="submit" class="inputp">Submit</button>

@@ -2,25 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 Route::get('/', [App\Http\Controllers\PerusahaanController::class, 'showPerusahaanData'])->name('list');
 Route::get('/', [App\Http\Controllers\LowonganController::class, 'index'])->name('list');
 Route::get('/buatLowongan', [App\Http\Controllers\ButtonController::class, 'showBuatLowongan'])->name('buatLowongan');
-Route::get('/editLowongan', [App\Http\Controllers\ButtonController::class, 'showEditLowongan'])->name('editLowongan');
+Route::get('/editLowongan/{perusahaan}', [App\Http\Controllers\ButtonController::class, 'showEditLowongan'])->name('editLowongan');
 Route::get('/halamanLowongan', [App\Http\Controllers\ButtonController::class, 'showHalamanLowongan'])->name('halamanLowongan');
 Route::get('/profilPerusahaan', [App\Http\Controllers\ButtonController::class, 'showProfilPerusahaan'])->name('profilPerusahaan');
 
@@ -31,3 +19,9 @@ Route::get('/dashboard', [App\Http\Controllers\PerusahaanController::class, 'ind
 
 Route::post('addLowongan', [App\Http\Controllers\LowonganController::class, 'addLowongan'])->name('addLowongan');
 Route::get('/buatLowongan/{perusahaan}', [App\Http\Controllers\PerusahaanController::class, 'showBuatLowongan'])->name('buatLowonganPerusahaan');
+Route::post('update', [App\Http\Controllers\ButtonController::class, 'update'])->name('update');
+Route::get('/tentang', [App\Http\Controllers\ButtonController::class, 'showTentang'])->name('showTentang');
+Route::post('updatePerusahaan', [App\Http\Controllers\ButtonController::class, 'updatePerusahaan'])->name('updatePerusahaan');
+Route::get('delete/{perusahaan}',[App\Http\Controllers\ButtonController::class,'delete'])->name('delete');
+
+Route::get('/tentang', [App\Http\Controllers\ButtonController::class, 'showTentang'])->name('tentang');

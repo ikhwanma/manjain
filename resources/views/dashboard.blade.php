@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -22,14 +22,11 @@
     
     <div class="grid-item">
         <div class="card">
-            <img class="card-img" src="img/logo.png" alt="" >
+            <img class="card-img" src="img/{{$item['logo']}}" alt="" >
             <div class="card-content">
                 <h1 class="card-title">{{$item['perusahaan']}}</h1>
                 <form action="{{Route('perusahaan', $item) }}" class="card-button">
                     <input class="card-button-text" type="submit" value="Lihat Perusahaan">
-                </form>
-                <form action="{{'editPerusahaan'}}" class="card-button">
-                    <input class="card-button-text" type="submit" value="Edit Perusahaan">
                 </form>
             </div>
         </div>

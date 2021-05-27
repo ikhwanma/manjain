@@ -36,12 +36,12 @@ body {
   
   .grid{
     margin-top: 1rem;
-    margin-left: 50px;
+    margin-left: 70px;
     font-family: 'Nunito', sans-serif;
     display: grid;
     width: 10em;
     grid-gap: 6rem;
-    grid-template-columns: repeat(1, 450px);
+    grid-template-columns: repeat(1, 10000px);
     align-items: start;
     position: absolute;
   }
@@ -181,14 +181,14 @@ body {
   
     @media only screen and (max-width: 1920px){
       .grid{
-        margin-left: 170px;
-        grid-template-columns: repeat(3, 350px);
+        margin-left: 50px;
+        grid-template-columns: repeat(4, 450px);
       }
     }
     @media only screen and (max-width: 1600px){
       .grid{
-        margin-left: 75px;
-        grid-template-columns: repeat(3, 350px);
+        margin-left: 50px;
+        grid-template-columns: repeat(4, 400px);
       }
     }
     @media only screen and (max-width: 1024px){
