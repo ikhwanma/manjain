@@ -19,6 +19,11 @@ class PerusahaanController extends Controller
         return view('perusahaan', ['perusahaan'=>$perusahaan]);
     }
 
+    function showPerusahaanData(){
+        $data = Perusahaan::where('pemilik', Auth::user()->name)->get();
+        return view('dashboard',['data'=>$data]);
+    }
+
     function showBuatLowongan(Perusahaan $perusahaan2,$id){
         return view('buatLowongan', ['perusahaan'=>$id]);
     }
@@ -42,6 +47,8 @@ class PerusahaanController extends Controller
             'alamat'=>$request->input('alamat'),
             'situs'=>$request->input('situs'),
             'deskripsi'=>$request->input('deskripsi')
+
+
         ]);
 
         if($query){

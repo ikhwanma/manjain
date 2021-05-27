@@ -20,7 +20,7 @@
         {{Session::get('success')}}
     </div>
 @endif
-<form action="addPerusahaan" method="post">
+<form action="addPerusahaan" method="post" >
     @csrf
     Nama Perusahaan :  <input type="text" name="nama" placeholder="Masukkan Nama" value="{{old('nama')}}">
     <span style="color: red;">@error('nama'){{$message}} @enderror</span><br>

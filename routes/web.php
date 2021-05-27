@@ -14,15 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
-
-Route::get('/list', [App\Http\Controllers\LowonganController::class, 'index'])->name('list');
+Route::get('/', [App\Http\Controllers\PerusahaanController::class, 'showPerusahaanData'])->name('list');
+Route::get('/', [App\Http\Controllers\LowonganController::class, 'index'])->name('list');
 Route::get('/buatLowongan', [App\Http\Controllers\ButtonController::class, 'showBuatLowongan'])->name('buatLowongan');
 Route::get('/editLowongan', [App\Http\Controllers\ButtonController::class, 'showEditLowongan'])->name('editLowongan');
 Route::get('/halamanLowongan', [App\Http\Controllers\ButtonController::class, 'showHalamanLowongan'])->name('halamanLowongan');

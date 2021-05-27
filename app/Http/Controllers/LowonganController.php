@@ -17,7 +17,7 @@ class LowonganController extends Controller
     }
 
     function addLowongan(Request $request){
-        
+        $datapemilik = Perusahaan::where('id', $request->input('idperusahaan'))->first();
         $request->validate([
             'judul'=>'required',
             'kategori'=>'required',
@@ -34,7 +34,13 @@ class LowonganController extends Controller
             'gaji'=>$request->input('gaji'),
             'jadwal'=>$request->input('jadwal'),
             'deskripsi'=>$request->input('deskripsi'),
-            'cara'=>$request->input('cara')
+            'cara'=>$request->input('cara'),
+            'perusahaan'=>$datapemilik->perusahaan,
+            'pemilik'=>$datapemilik->pemilik,
+            'industri'=>$datapemilik->industri,
+            'alamat'=>$datapemilik->alamat,
+            'situs'=>$datapemilik->situs,
+            'deskripsiP'=>$datapemilik->deskripsi
         ]);
 
         if($query){
