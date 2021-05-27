@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Lowongan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -16,6 +17,8 @@ class PerusahaanController extends Controller
     }
 
     function show(Perusahaan $perusahaan){
+        $datapemilik = Lowongan::where('id', $perusahaan)->first();
+        die($datapemilik);
         return view('perusahaan', ['perusahaan'=>$perusahaan]);
     }
 

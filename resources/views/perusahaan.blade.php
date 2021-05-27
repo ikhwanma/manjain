@@ -14,8 +14,7 @@
     <link rel="stylesheet" href="../css/stylePerusahaan.css">
 </head>
 <body>
-<div class="grid" style="margin-left: 57rem;">
-    
+<div class="grid" style="margin-left: 52rem;"> 
     <div class="grid-item">
         <div class="card">
             <img class="card-img" src="img/logo.png" alt="" >
@@ -32,8 +31,28 @@
             </div>
         </div>
     </div> 
-</div>
     
+</div>
+
+<div class="grid" style="margin-top: 48rem;"  style="grid-template-columns: repeat(3, 350px)"> 
+    <div class="grid-item">
+        <div class="card">
+            <img class="card-img" src="img/logo.png" alt="" >
+            <div class="card-content">
+                <h1 class="card-title">{{$perusahaan['perusahaan']}}</h1>
+                <h3>{{$perusahaan['pemilik']}}</h3>
+                <h3>{{$perusahaan['deskripsi']}}</h3>
+                <form action="{{Route('buatLowonganPerusahaan', $perusahaan) }}" class="card-button">
+                <input class="card-button-text" type="submit" value="Buat Lowongan">
+                </form>
+                <form action="{{'editPerusahaan'}}" class="card-button">
+                    <input class="card-button-text" type="submit" value="Edit Perusahaan">
+                </form>
+            </div>
+        </div>
+    </div> 
+    
+</div>
 </body>
 </html>
 </x-app-layout>
