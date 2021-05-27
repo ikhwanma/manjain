@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Bulan Mei 2021 pada 10.48
+-- Waktu pembuatan: 27 Bulan Mei 2021 pada 13.14
 -- Versi server: 10.4.17-MariaDB
--- Versi PHP: 7.3.27
+-- Versi PHP: 7.4.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,6 +36,30 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `lowongan`
+--
+
+CREATE TABLE `lowongan` (
+  `id` int(11) NOT NULL,
+  `idperusahaan` int(11) NOT NULL,
+  `judul` text NOT NULL,
+  `kategori` text NOT NULL,
+  `gaji` text NOT NULL,
+  `jadwal` text NOT NULL,
+  `deskripsi` text NOT NULL,
+  `cara` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `lowongan`
+--
+
+INSERT INTO `lowongan` (`id`, `idperusahaan`, `judul`, `kategori`, `gaji`, `jadwal`, `deskripsi`, `cara`) VALUES
+(2, 3, 'Dicari CEO MANJA.in', 'CEO', '5.000.000.000.000.000', 'Senin - Jumat (10:00-15:00)', 'dwqqdq', 'dqdqda');
 
 -- --------------------------------------------------------
 
@@ -112,7 +136,8 @@ CREATE TABLE `perusahaans` (
 --
 
 INSERT INTO `perusahaans` (`id`, `perusahaan`, `pemilik`, `industri`, `alamat`, `situs`, `deskripsi`) VALUES
-(3, 'MANJA.in', 'Ikhwan Maulana Akbar', 'IT', 'Kota Malang', 'www.manjain.com', 'MANJA.in(Mencari Lowongan Kerja)');
+(3, 'MANJA.in', 'Ikhwan Maulana Akbar', 'IT', 'Kota Malang', 'www.manjain.com', 'MANJA.in(Mencari Lowongan Kerja)'),
+(10, 'Google', 'Ikhwan Maulana Akbar', 'IT', 'Kota Malang', 'www.google.com', 'qwe');
 
 -- --------------------------------------------------------
 
@@ -134,11 +159,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('8vnxCjCktT0tW10b3ZsTzVo4bbfNiTH1XynRYKjM', 3, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiVklTS25oWTJLY0tlUWpsYjYzWVptQ3ZQaUxhNW9Xb2x6WXk3TkFSdyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXNoYm9hcmQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTozO3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTAkYW5YVWFLVkxiWGh3VzBYQVRUa3ZwLklBLjA1LmRwSHZTMFQwRzdGV1BGV3hWanFyVVhKNEsiO30=', 1621586838),
-('JU8uPYqAwThVGokGuDXPxo733lQZo12mY8yUPO4L', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiektkNEdCUzNjUUdnTVVKZngxQUw2QUgwYzc4S0Q0ckZTMHl3bk9sdiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NjU6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9maWxQZXJ1c2FoYWFuP2J1dHRvbj1Qcm9maWwlMjBQZXJ1c2FoYWFuIjt9fQ==', 1621586796),
-('NLzgAwN60BoOxRhpnvTpbWsf0bGmc5r8R8q5D1ET', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiQ3Jyc0JEVndqWDNnYjE4c0JDM3E0dU55VkFPRmxJYnVWMUVzNzZrRCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9yZWdpc3RlciI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1621586703),
-('TILflv9JnvXdEXK6YmYpa9EHuSdfghvbvW7jRty6', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoid2hZNThkZ3cwS2t2U2ZrT1ZWQlpvN3h1bjQyNlZqS251TGtBc3Y4RSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXNoYm9hcmQiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTAkRXhFcXJnTHZiNmo5UzhqSTRhR3B3Lk1ja2NIbGViRTViUHRYeXJFaTA3dEh6Y0IuOWJnYy4iO30=', 1621580426),
-('tjO1ouOkTvug4rWqvaSNaEQZcBu1AM96cjKQZMvW', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSHFPQ09GTlNTczE4aXRtV1NXWDNaUkRGTjhaaHR5bERGT3lhbWpQUSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9yZWdpc3RlciI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1621586703);
+('YfepJdcmSU2XacTuq2mUgrCzvWBwBUF17zpWvxPM', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiem11cmxma05OcFppbk5xbktOamM4MU96Mlh4ekQyUEJvYlN6bGo5ayI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXNoYm9hcmQiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTAkRXhFcXJnTHZiNmo5UzhqSTRhR3B3Lk1ja2NIbGViRTViUHRYeXJFaTA3dEh6Y0IuOWJnYy4iO30=', 1622113579);
 
 -- --------------------------------------------------------
 
@@ -164,7 +185,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Ikhwan Maulana Akbar', 'Ikhwan749@gmail.com', NULL, '$2y$10$ExEqrgLvb6j9S8jI4aGpw.MckcHlebE5bPtXyrEi07tHzcB.9bgc.', NULL, NULL, 'CtEvCCE3ab16jgagEokF9He4vZFOyHgifEXmGq24SJhH7dlqFvncApLDQC5c', '2021-05-18 22:00:38', '2021-05-18 22:00:38'),
+(1, 'Ikhwan Maulana Akbar', 'Ikhwan749@gmail.com', NULL, '$2y$10$ExEqrgLvb6j9S8jI4aGpw.MckcHlebE5bPtXyrEi07tHzcB.9bgc.', NULL, NULL, '9e3sc0HYY8glPq1Eis8NvcJkz2gk3WYJIejlngbKWRYAb3TB8AAslrCwLBmM', '2021-05-18 22:00:38', '2021-05-18 22:00:38'),
 (2, 'tes', 'tes@gmail.com', NULL, '$2y$10$8qz7.Zkys5DEJnxIcPfske4AqaD4yROBrcRNo47/kGjw8N8uDTFP6', NULL, NULL, NULL, '2021-05-19 00:46:49', '2021-05-19 00:46:49'),
 (3, 'Tria Elvafizani', 'triaelva@gmail.com', NULL, '$2y$10$anXUaKVLbXhwW0XATTkvp.IA.05.dpHvS0T0G7FWPFWxVjqrUXJ4K', NULL, NULL, NULL, '2021-05-21 01:45:45', '2021-05-21 01:45:45');
 
@@ -178,6 +199,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `tw
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indeks untuk tabel `lowongan`
+--
+ALTER TABLE `lowongan`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `migrations`
@@ -231,6 +258,12 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT untuk tabel `lowongan`
+--
+ALTER TABLE `lowongan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
@@ -246,7 +279,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT untuk tabel `perusahaans`
 --
 ALTER TABLE `perusahaans`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
