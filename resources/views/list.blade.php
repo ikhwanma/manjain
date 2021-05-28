@@ -17,9 +17,9 @@
       <input type="checkbox" id="show-menu">
       <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
       <div class="content">
-      <div class="logo"><a href=" "><img src="../img/logo.png" alt=""></a></div>
+      <div class="logo"><a href=""><img src="../img/logo.png" alt=""></a></div>
         <ul class="links">
-          <li ><a href="{{route('tentang')}}">Tentang</a></li>
+          <li ><a href="{{url('/manjain/tentang')}}">Tentang Kami</a></li>
           <li ><a href="login">Login</a></li>
           <li ><a href="register">Register</a></li>
         </ul>

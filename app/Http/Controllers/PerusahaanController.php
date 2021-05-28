@@ -17,7 +17,7 @@ class PerusahaanController extends Controller
     }
 
     function lihatPerusahaan(){
-       
+        
         return view('lihatPerusahaan');
     }
 

@@ -11,8 +11,9 @@ use Illuminate\Support\Facades\DB;
 class ButtonController extends Controller
 {
     //
-    public function showTentang(){
-        return view('lihatPerusahaan');
+    public function lihatPerusahaan(){
+        $data = DB::table('perusahaans')->first();
+        return view('lihatPerusahaan', ['data'=>$data]);
     }
     public function showList(){
         return view('list');
@@ -88,5 +89,7 @@ class ButtonController extends Controller
         return view('homePemilik');
     }
 
-    
+    public function showTentang(){
+        return view('lihatTentang');
+    }
 }

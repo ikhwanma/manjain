@@ -20,8 +20,7 @@ Route::get('/dashboard', [App\Http\Controllers\PerusahaanController::class, 'ind
 Route::post('addLowongan', [App\Http\Controllers\LowonganController::class, 'addLowongan'])->name('addLowongan');
 Route::get('/buatLowongan/{perusahaan}', [App\Http\Controllers\PerusahaanController::class, 'showBuatLowongan'])->name('buatLowonganPerusahaan');
 Route::post('update', [App\Http\Controllers\ButtonController::class, 'update'])->name('update');
-Route::get('/tentang', [App\Http\Controllers\ButtonController::class, 'showTentang'])->name('showTentang');
 Route::post('updatePerusahaan', [App\Http\Controllers\ButtonController::class, 'updatePerusahaan'])->name('updatePerusahaan');
 Route::get('delete/{perusahaan}',[App\Http\Controllers\ButtonController::class,'delete'])->name('delete');
 
-Route::get('/tentang', [App\Http\Controllers\ButtonController::class, 'showTentang'])->name('tentang');
+Route::get('/manjain/tentang', [App\Http\Controllers\ButtonController::class, 'showTentang'])->name('tentang');
