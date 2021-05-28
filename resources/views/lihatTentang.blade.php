@@ -17,8 +17,8 @@
       <div class="logo"><a href="{{url('/')}}"><img src="../img/logo.png" alt=""></a></div>
         <ul class="links">
           <li ><a href="{{url('/manjain/tentang')}}">Tentang Kami</a></li>
-          <li ><a href="login">Login</a></li>
-          <li ><a href="register">Register</a></li>
+          <li ><a href="{{url('/login')}}">Login</a></li>
+          <li ><a href="{{url('/register')}}">Register</a></li>
         </ul>
       </div>
       
