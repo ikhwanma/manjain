@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Bulan Mei 2021 pada 13.14
+-- Waktu pembuatan: 28 Bulan Mei 2021 pada 02.42
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 7.4.15
 
@@ -40,10 +40,10 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `lowongan`
+-- Struktur dari tabel `lowongans`
 --
 
-CREATE TABLE `lowongan` (
+CREATE TABLE `lowongans` (
   `id` int(11) NOT NULL,
   `idperusahaan` int(11) NOT NULL,
   `judul` text NOT NULL,
@@ -51,15 +51,25 @@ CREATE TABLE `lowongan` (
   `gaji` text NOT NULL,
   `jadwal` text NOT NULL,
   `deskripsi` text NOT NULL,
-  `cara` text NOT NULL
+  `cara` text NOT NULL,
+  `perusahaan` text NOT NULL,
+  `pemilik` text NOT NULL,
+  `industri` text NOT NULL,
+  `alamat` text NOT NULL,
+  `situs` text NOT NULL,
+  `deskripsiP` text NOT NULL,
+  `logo` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `lowongan`
+-- Dumping data untuk tabel `lowongans`
 --
 
-INSERT INTO `lowongan` (`id`, `idperusahaan`, `judul`, `kategori`, `gaji`, `jadwal`, `deskripsi`, `cara`) VALUES
-(2, 3, 'Dicari CEO MANJA.in', 'CEO', '5.000.000.000.000.000', 'Senin - Jumat (10:00-15:00)', 'dwqqdq', 'dqdqda');
+INSERT INTO `lowongans` (`id`, `idperusahaan`, `judul`, `kategori`, `gaji`, `jadwal`, `deskripsi`, `cara`, `perusahaan`, `pemilik`, `industri`, `alamat`, `situs`, `deskripsiP`, `logo`) VALUES
+(10, 13, 'Dicari CEO MANJA.in', 'CEO', '70.000.000', 'Senin - Jumat (09:00-16:00)', 'Syarat:Pendidikan Minimal S3 , Pengalaman Kerja 15 Tahun', 'Kirim CV ke email : manjain@gmail.com', 'MANJA.in', 'Ikhwan Maulana Akbar', 'IT', 'Kota Malang', 'www.manjain.com', 'MANJA.in(Mencari Lowongan Pekerjaan)', 'manjain.png'),
+(12, 14, 'Dicari CEO Microsoft', 'CEO', '150.000.000', 'Senin - Jumat (09:00-16:00)', 'Tidak ada ketentuan', 'Kirimkan CV ke email: microsoft@gmail.com', 'Microsoft', 'Ikhwan Maulana Akbar', 'IT', 'Amerika', 'www.microsoft.com', 'Microsoft Corporation (NASDAQ: MSFT) adalah sebuah perusahaan multinasional Amerika Serikat yang berkantor pusat di Redmond, Washington, Amerika Serikat yang mengembangkan, membuat, memberi lisensi, dan mendukung berbagai produk dan jasa terkait dengan komputer.', 'microsoft.png'),
+(13, 13, 'Dicari Manager MANJA.in', 'Manager', '60.000.000', 'Senin - Jumat (10:00-15:00)', 'Syarat : Minimal pendidikan S2, minimal pengalaman 5 tahun bekerja', 'Kirimkan CV ke manjain@gmail.com', 'MANJA.in', 'Ikhwan Maulana Akbar', 'IT', 'Kota Malang', 'www.manjain.com', 'MANJA.in(Mencari Lowongan Pekerjaan)', 'manjain.png'),
+(15, 12, 'Dicari CEO Google', 'CEO', '150.000.000', 'Senin - Jumat (10:00-15:00)', 'Akan diseleksi, batas terakhir pendaftaran : 27 Mei 2021', 'Kirim CV ke email google @gmail.com', 'Google', 'Ikhwan Maulana Akbar', 'IT', 'Amerika', 'www.google.com', 'qwe', 'google.png');
 
 -- --------------------------------------------------------
 
@@ -128,16 +138,18 @@ CREATE TABLE `perusahaans` (
   `industri` text NOT NULL,
   `alamat` text NOT NULL,
   `situs` text NOT NULL,
-  `deskripsi` text NOT NULL
+  `deskripsi` text NOT NULL,
+  `logo` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `perusahaans`
 --
 
-INSERT INTO `perusahaans` (`id`, `perusahaan`, `pemilik`, `industri`, `alamat`, `situs`, `deskripsi`) VALUES
-(3, 'MANJA.in', 'Ikhwan Maulana Akbar', 'IT', 'Kota Malang', 'www.manjain.com', 'MANJA.in(Mencari Lowongan Kerja)'),
-(10, 'Google', 'Ikhwan Maulana Akbar', 'IT', 'Kota Malang', 'www.google.com', 'qwe');
+INSERT INTO `perusahaans` (`id`, `perusahaan`, `pemilik`, `industri`, `alamat`, `situs`, `deskripsi`, `logo`) VALUES
+(12, 'Google', 'Ikhwan Maulana Akbar', 'IT', 'Amerika', 'www.google.com', 'qwe', 'google.png'),
+(13, 'MANJA.in', 'Ikhwan Maulana Akbar', 'IT', 'Kota Malang', 'www.manjain.com', 'MANJA.in(Mencari Lowongan Pekerjaan)', 'manjain.png'),
+(14, 'Microsoft', 'Ikhwan Maulana Akbar', 'IT', 'Amerika', 'www.microsoft.com', 'Microsoft Corporation (NASDAQ: MSFT) adalah sebuah perusahaan multinasional Amerika Serikat yang berkantor pusat di Redmond, Washington, Amerika Serikat yang mengembangkan, membuat, memberi lisensi, dan mendukung berbagai produk dan jasa terkait dengan komputer.', 'microsoft.png');
 
 -- --------------------------------------------------------
 
@@ -159,7 +171,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('YfepJdcmSU2XacTuq2mUgrCzvWBwBUF17zpWvxPM', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiem11cmxma05OcFppbk5xbktOamM4MU96Mlh4ekQyUEJvYlN6bGo5ayI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9kYXNoYm9hcmQiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTAkRXhFcXJnTHZiNmo5UzhqSTRhR3B3Lk1ja2NIbGViRTViUHRYeXJFaTA3dEh6Y0IuOWJnYy4iO30=', 1622113579);
+('LeEx7khH6bTS2WxIlEObhQmTPKVgZnmXcTb7DEYK', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiQ29SRlJmbmR0Y3B4U3NBVEZBcjdCTXBwcmVGcFJiMjVwVWk5YXIwaSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzc6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9lZGl0TG93b25nYW4vMTUiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTAkRXhFcXJnTHZiNmo5UzhqSTRhR3B3Lk1ja2NIbGViRTViUHRYeXJFaTA3dEh6Y0IuOWJnYy4iO30=', 1622162210);
 
 -- --------------------------------------------------------
 
@@ -185,7 +197,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Ikhwan Maulana Akbar', 'Ikhwan749@gmail.com', NULL, '$2y$10$ExEqrgLvb6j9S8jI4aGpw.MckcHlebE5bPtXyrEi07tHzcB.9bgc.', NULL, NULL, '9e3sc0HYY8glPq1Eis8NvcJkz2gk3WYJIejlngbKWRYAb3TB8AAslrCwLBmM', '2021-05-18 22:00:38', '2021-05-18 22:00:38'),
+(1, 'Ikhwan Maulana Akbar', 'Ikhwan749@gmail.com', NULL, '$2y$10$ExEqrgLvb6j9S8jI4aGpw.MckcHlebE5bPtXyrEi07tHzcB.9bgc.', NULL, NULL, 'RP03eRV9AHL7iUNpSSCLr5mEOZaHFplUEqTta3FHYNSnAnOwjKfrRYdk2vug', '2021-05-18 22:00:38', '2021-05-18 22:00:38'),
 (2, 'tes', 'tes@gmail.com', NULL, '$2y$10$8qz7.Zkys5DEJnxIcPfske4AqaD4yROBrcRNo47/kGjw8N8uDTFP6', NULL, NULL, NULL, '2021-05-19 00:46:49', '2021-05-19 00:46:49'),
 (3, 'Tria Elvafizani', 'triaelva@gmail.com', NULL, '$2y$10$anXUaKVLbXhwW0XATTkvp.IA.05.dpHvS0T0G7FWPFWxVjqrUXJ4K', NULL, NULL, NULL, '2021-05-21 01:45:45', '2021-05-21 01:45:45');
 
@@ -201,9 +213,9 @@ ALTER TABLE `failed_jobs`
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Indeks untuk tabel `lowongan`
+-- Indeks untuk tabel `lowongans`
 --
-ALTER TABLE `lowongan`
+ALTER TABLE `lowongans`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -258,10 +270,10 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `lowongan`
+-- AUTO_INCREMENT untuk tabel `lowongans`
 --
-ALTER TABLE `lowongan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `lowongans`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
@@ -279,7 +291,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT untuk tabel `perusahaans`
 --
 ALTER TABLE `perusahaans`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
